@@ -1,0 +1,58 @@
+    <!-- Navigation -->
+    <div ng-include="'templates/navbar.html'"></div>
+
+    <div ng-controller="HomePageController as controller">
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{controller.heading}}</h1>
+                        <hr class="small">
+                        <span class="subheading">{{controller.secondHeading}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div ng-repeat="idea in controller.ideas">
+                <div class="post-preview">
+                    <a href="#!/post/{{idea.id}}">
+                        <h2 class="post-title">
+                            {{idea.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{idea.header}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#!/post/{{idea.id}}">{{idea.owner.name}}</a> {{idea.createdAt}}</p>
+                </div>
+                <hr>
+              </div>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="" ng-click="controller.loadmore()">Older Posts &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div ng-include="'templates/footer.html'"></div>
+
+
+
+
+

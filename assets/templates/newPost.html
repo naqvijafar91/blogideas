@@ -1,0 +1,59 @@
+
+
+
+
+  <!-- Navigation -->
+  <div ng-include="'templates/navbar.html'"></div>
+
+  <div ng-controller="PostPageController as controller">
+  <!-- Page Header -->
+  <!-- Set your background image for this header on the line below. -->
+  <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="page-heading">
+            <h1>Have a new Idea?</h1>
+            <hr class="small">
+            <span class="subheading">Write it down.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" >
+        <div class="row control-group">
+          <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label>Title</label>
+            <input type="text" class="form-control" ng-model="controller.newPost.title" placeholder="Enter a title first" id="title" required data-validation-required-message="Please enter your name.">
+            <p class="help-block text-danger"></p>
+          </div>
+        </div>
+        <br>
+        <input type="text" class="form-control" ng-model="controller.newPost.header" placeholder="Enter the header Text " id="header" required data-validation-required-message="Please enter your name.">
+        <br>
+        <div text-angular ng-model="controller.newPost.text"></div>
+        <div class="addButton">
+          <button class="btn btn-default" ng-click="controller.requestApproval(controller.newPost)">Request for Publishing</button>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <hr>
+
+    <script type="text/ng-template" id="templateId">
+      <h2>Congratulations</h2>
+      <p>Your idea has been submitted, it will take a while for it to appear.</p>
+    </script>
+
+  </div>
+  <!-- Footer -->
+  <div ng-include="'templates/footer.html'"></div>
+
+
+

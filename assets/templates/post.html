@@ -1,0 +1,40 @@
+<!-- Navigation -->
+<div ng-include="'templates/navbar.html'"></div>
+
+<div ng-controller="SingleIdeaController as controller">
+  <!-- Page Header -->
+  <!-- Set your background image for this header on the line below. -->
+  <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="post-heading">
+            <h1>{{controller.idea.title}}</h1>
+
+            <h2 class="subheading">{{controller.idea.header}}</h2>
+            <span class="meta">Posted by <a href="">{{controller.idea.owner.name}}</a> {{controller.idea.createdAt}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <!--{{controller.idea.text}}-->
+          <div ng-bind-html="controller.idea.text"></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+</div>
+<!-- Footer -->
+<div ng-include="'templates/footer.html'"></div>
+
+

@@ -1,0 +1,118 @@
+<div>
+
+  <!-- Navigation -->
+  <div ng-include="'templates/navbar.html'"></div>
+
+  <div ng-controller="AuthPageController as controller">
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Join this Awesome place</h1>
+              <hr class="small">
+              <span class="subheading">Lets know who you are.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-1 col-md-10 col-md-offset-1">
+          <p><b>LOGIN</b></p>
+
+          <form name="login" id="loginForm" novalidate>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Email Address</label>
+                <input type="email" class="form-control" ng-model="controller.user.email" placeholder="Email Address" id="loginemail" required
+                       data-validation-required-message="Please enter your email address.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="controller.user.password" placeholder="Password" id="loginpassword" required
+                       data-validation-required-message="Please enter your phone number.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+
+            <div id="loginsuccess"></div>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <button type="submit" ng-click="controller.login(controller.user)" class="btn btn-default">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="registration col-lg-4 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <p><b>REGISTRATION</b></p>
+
+          <form name="register" id="regsiterForm" novalidate>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" ng-model="controller.reg.name" id="registername" required
+                       data-validation-required-message="Please enter your name.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Email Address</label>
+                <input type="email" class="form-control" ng-model="controller.reg.email" placeholder="Email Address" id="registeremail" required
+                       data-validation-required-message="Please enter your email address.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model="controller.reg.password" placeholder="Password" id="registerpassword" required
+                       data-validation-required-message="Please enter your phone number.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="row control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>Repeat Password</label>
+                <input type="password" class="form-control" ng-model="controller.reg.password1" placeholder="Repeat Password" id="registerpasswordrepeat"
+                       required data-validation-required-message="Please enter your phone number.">
+
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+
+            <div id="registersuccess"></div>
+            <div class="row">
+              <div class="form-group col-xs-12">
+                <button type="submit" ng-click="controller.register(controller.reg)" class="btn btn-default">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+  </div>
+
+</div>
+<!-- Footer -->
+<div ng-include="'templates/footer.html'"></div>
+
